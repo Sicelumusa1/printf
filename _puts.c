@@ -9,7 +9,7 @@
 int _puts(char *str)
 {
 	int index, counted_chars;
-	
+
 	/*loop over the str*/
 	for (index = 0; str[index]; index++)
 	{

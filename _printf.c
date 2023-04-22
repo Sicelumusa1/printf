@@ -4,12 +4,13 @@
  * _printf - a function that produces output according to a format.
  * Return: the number of characters printed
  * @format: is a character string.
- */ 
+ */
 
 int _printf(const char *format, ...)
 {
 	int index, char_count = 0;
 	va_list args;
+
 	va_start(args, format);
 
 	/*checks if pointers points to NULL*/
