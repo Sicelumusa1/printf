@@ -7,6 +7,7 @@
 /**
  * _printf - a function that produces output according to a format.
  * @format: is a character string.
+ * Return: the number of characters printed
  */
 
 /*list of function prototypes*/
