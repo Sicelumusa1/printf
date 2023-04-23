@@ -8,7 +8,7 @@
 
 int _puts(char *str)
 {
-	int index, counted_chars;
+	int index, counted_chars = 0;
 
 	/*loop over the str*/
 	for (index = 0; str[index]; index++)
@@ -19,4 +19,4 @@ int _puts(char *str)
 
 	/*return count of characters printed*/
 	return (counted_chars);
-}
+}	

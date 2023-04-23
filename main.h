@@ -3,6 +3,8 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <limits.h>
+#include <unistd.h>
 
 /**
  * _printf - a function that produces output according to a format.
@@ -14,4 +16,5 @@
 int _printf(const char *format, ...);
 int _putchar(char c);
 int _puts(char *str);
+int _print_int(int num);
 #endif
