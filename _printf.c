@@ -47,7 +47,7 @@ int _printf(const char *format, ...)
 			}
 			else if (format[index] == 'u')
 			{
-				char_count += _output_unsigned_integer(va_arg(args, int));
+				char_count += _output_unsigned_integer(va_arg(args, unsigned int));
 			}
 			else if (format[index] == '%')
 			{
