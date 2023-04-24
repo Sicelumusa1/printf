@@ -4,7 +4,7 @@
  * _printf - a function that produces output according to a format.
  * Return: the number of characters printed
  * @format: is a character string.
- */
+ */ 
 
 int _printf(const char *format, ...)
 {
@@ -26,7 +26,6 @@ int _printf(const char *format, ...)
 		if (format[index] == '%')
 		{
 			index++;
-
 			if (format[index] == 'c')
 			{
 				char_count += _putchar(va_arg(args, int));
@@ -37,7 +36,8 @@ int _printf(const char *format, ...)
 			}
 			else if (format[index] == 'i' || format[index] == 'd')
 			{
-				char_count += _print_int(va_args(args, int);
+				char_count += _print_int(va_arg(args, int));
+
 			}
 			else if (format[index] == '%')
 			{
@@ -51,4 +51,4 @@ int _printf(const char *format, ...)
 	}
 	va_end(args);
 	return (char_count);
-}
+}	
