@@ -3,6 +3,8 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <limits.h>
+#include <unistd.h>
 
 /**
  * _printf - a function that produces output according to a format.
@@ -22,9 +24,11 @@ int get_precision(const char *format, int *i, va_list lst);
 int get_width(const char *format, int *i, va_list lst);
 void handle_custom_specifier_r(char *buffer, int *i, int buf_size, va_list lst);
 void handle_field_width(const char *format, int *i, va_list lst, char *width);
-void handle_zero_flag(char *buffer, int *i, int width);
+void handle_zero_flag(char *buffer, int *i, int buf_size, int width, int precision,
+		int _isnegative);
 void handle_precision(const char *format, int *i, va_list lst, int *precision);
 void handle_minus_flag(char *buffer, int *i, int buf_size,
-                int width, int precision, int _isnegative);
+                int width, int str_len, int _isnegative);
 int _isdigit(int c);
+int _print_int(int num);
 #endif
