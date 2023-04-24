@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <limits.h>
 #include <unistd.h>
+#include <string.h>
 
 /**
  * _printf - a function that produces output according to a format.
@@ -34,4 +35,7 @@ void handle_minus_flag(char *buffer, int *i, int buf_size,
                 int width, int str_len, int _isnegative);
 int _isdigit(int c);
 int _print_int(int num);
+int print_non_printable(va_list args, char buffer[]);
+int is_printable(char c);
+int print_pointer(va_list args,char buffer[], int flags, int width, int precision, int size);
 #endif

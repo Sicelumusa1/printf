@@ -41,7 +41,6 @@ int _printf(const char *format, ...)
 			}
 			else if (format[index] == 'b')
 			{
-
 				print_binary(va_arg(args, unsigned int));
 				char_count += sizeof(unsigned int) * 8;
 			}
