@@ -39,6 +39,12 @@ int _printf(const char *format, ...)
 				char_count += _print_int(va_arg(args, int));
 
 			}
+			else if (format[index] == 'b')
+			{
+
+				print_binary(va_arg(args, unsigned int));
+				char_count += sizeof(unsigned int) * 8;
+			}
 			else if (format[index] == '%')
 			{
 				char_count += _putchar('%');
