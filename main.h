@@ -16,6 +16,9 @@
 int _printf(const char *format, ...);
 int _putchar(char c);
 int _puts(char *str);
+int _output_unsigned_integer(unsigned int num);
+int _output_unsigned_assist(unsigned int num);
+
 void print_binary(unsigned int x);
 int print_binary_custom(const char *format, unsigned int x);
 void handle_length_modifiers(char modifier, char conversion_specifier, ...);
