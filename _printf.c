@@ -8,7 +8,7 @@
 
 int _printf(const char *format, ...)
 {
-	int index, char_count = 0, precision, width;
+	int index, char_count = 0;
 	va_list args;
 
 	va_start(args, format);
@@ -26,8 +26,6 @@ int _printf(const char *format, ...)
 		if (format[index] == '%')
 		{
 			index++;
-			precision = -1;
-			width = -1;
 
 			if (format[index] == 'c')
 			{
@@ -39,10 +37,7 @@ int _printf(const char *format, ...)
 			}
 			else if (format[index] == 'i' || format[index] == 'd')
 			{
-				int n = va_args(args, int);
-
-				handle_precision(&precision, &width, &index, format, args);
-				char_count += _print_int(n, width, precision);
+				char_count += _print_int(va_args(args, int);
 			}
 			else if (format[index] == '%')
 			{
