@@ -19,6 +19,14 @@ int _putchar(char c);
 int _puts(char *str);
 int _output_unsigned_integer(unsigned int num);
 int _output_unsigned_assist(unsigned int num);
+void _write(char *str);
+unsigned int oct_len(unsigned int num, int base);
+char *mem_cpy(char *dest, char *src, unsigned int num);
+char *rev_string(char *str);
+int hex_check(int num, char x);
+int _output_oct(int num);
+int uppr_hex(unsigned long int num);
+int low_hex(unsigned int num);
 
 void print_binary(unsigned int x);
 int print_binary_custom(const char *format, unsigned int x);
@@ -35,7 +43,8 @@ void handle_minus_flag(char *buffer, int *i, int buf_size,
                 int width, int str_len, int _isnegative);
 int _isdigit(int c);
 int _print_int(int num);
-int print_non_printable(va_list args, char buffer[]);
+int print_non_printable(va_list args, char buffer[], int flags, int width, int precision, int size);
 int is_printable(char c);
 int print_pointer(va_list args,char buffer[], int flags, int width, int precision, int size);
+int write_formatted(char buffer[], int flags, int width, int length, char extra_c);
 #endif

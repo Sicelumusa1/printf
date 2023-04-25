@@ -48,6 +48,18 @@ int _printf(const char *format, ...)
 			{
 				char_count += _output_unsigned_integer(va_arg(args, unsigned int));
 			}
+			else if (format[index] == 'o')
+			{
+				char_count += _output_oct(va_arg(args, int));
+			}
+			else if (format[index] == 'x')
+			{
+				chara_count += low_hex(va_arg(args, unsigned int));
+			}
+			else if (format[index] == 'X')
+			{
+				char_count += uppr_hex(va_arg(args, unsigned int));
+			}
 			else if (format[index] == '%')
 			{
 				char_count += _putchar('%');
