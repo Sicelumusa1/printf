@@ -12,6 +12,7 @@ int _print_int(int num)
 	unsigned int num_u = is_negative ? -num : num;
 	char *str;
 	int i, j, k, len = 0;
+	char tmp;
 
 	/* the number of digits are counted*/
 	i = num_u;
@@ -41,7 +42,7 @@ int _print_int(int num)
 	/*the string is reversed*/
 	for (k = 0, j--; k < j; k++, j--)
 	{
-		char tmp = str[k];
+		tmp = str[k];
 		str[k] = str[j];
 		str[j] = tmp;
 	}

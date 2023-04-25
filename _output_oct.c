@@ -10,9 +10,9 @@ int _output_oct(unsigned int num)
 {
 	unsigned int len;
 	char *octal_rep;
-	char * rev_str;
+	char *rev_str;
 
-	if(num == 0)
+	if (num == 0)
 	{
 		return (_putchar('0'));
 	}

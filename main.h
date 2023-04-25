@@ -9,7 +9,8 @@
 #include <string.h>
 
 /**
- * _printf - a function that produces output according to a format.
+ * _printf - a function that produces output
+ * according to a format.
  * @format: is a character string.
  * Return: the number of characters printed
  */
@@ -37,21 +38,42 @@ int _putint(int n);
 
 void print_binary(unsigned int x);
 int print_binary_custom(const char *format, unsigned int x);
-void handle_length_modifiers(char modifier, char conversion_specifier, ...);
+
+void handle_length_modifiers(char modifier,
+char conversion_specifier, ...);
+
 void _flag_characters(int num, char specifier, char flags[]);
 int get_precision(const char *format, int *i, va_list lst);
-int get_width(const char *format, int *i, va_list lst);
-void handle_custom_specifier_r(char *buffer, int *i, int buf_size, va_list lst);
-void handle_field_width(const char *format, int *i, va_list lst, char *width);
-void handle_zero_flag(char *buffer, int *i, int buf_size, int width, int precision,
-		int _isnegative);
-void handle_precision(const char *format, int *i, va_list lst, int *precision);
+
+int get_width(const char *format, int *i,
+va_list lst);
+
+void handle_custom_specifier_r(char *buffer, int *i,
+int buf_size, va_list lst);
+
+void handle_field_width(const char *format,
+int *i, va_list lst, char *width);
+
+void handle_zero_flag(char *buffer, int *i,
+int buf_size, int width, int precision, int _isnegative);
+
+void handle_precision(const char *format,
+int *i, va_list lst, int *precision);
+
 void handle_minus_flag(char *buffer, int *i, int buf_size,
-                int width, int str_len, int _isnegative);
+int width, int str_len, int _isnegative);
+
 int _isdigit(int c);
 int _print_int(int num);
-int print_non_printable(va_list args, char buffer[], int flags, int width, int precision, int size);
+
+int print_non_printable(va_list args, char buffer[],
+int flags, int width, int precision, int size);
+
 int is_printable(char c);
-int print_pointer(va_list args,char buffer[], int flags, int width, int precision, int size);
-int write_formatted(char buffer[], int flags, int width, int length, char extra_c);
+
+int print_pointer(va_list args, char buffer[],
+int flags, int width, int precision, int size);
+
+int write_formatted(char buffer[], int flags,
+int width, int length, char extra_c);
 #endif
