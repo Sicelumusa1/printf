@@ -61,6 +61,10 @@ int _printf(const char *format, ...)
 			{
 				char_count += uppr_hex(va_arg(args, unsigned int));
 			}
+			else if (format[index] == 'p')
+			{
+				char_count += _output_pointer(va_arg(args, void *));
+			}
 			else if (format[index] == 'r')
 			{
 				str = va_arg(args, char *);

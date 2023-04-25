@@ -1,23 +1,24 @@
 #include "main.h"
 
 /**
- * uppr_hex - print an hexadecimal number
- * @num: the arg
- * Return: counter
+ * uppr_hex - prints an hexgecimal number.
+ * @num: the arguments.
+ * Return: returns the counter.
  */
 
 int uppr_hex(unsigned long int num)
 {
-	unsigned long int index = 0, counter = 0;
-	unsigned long int *array;
+	long int index = 0, counter = 0;
+	long int *array;
 	unsigned long int temp = num;
 
 	while (num / 16 != 0)
 	{
 		num /= 16;
+		counter++;
 	}
 	counter++;
-	array = malloc(counter * sizeof(unsigned long int));
+	array = malloc(counter * sizeof(long int));
 
 	while (index < counter)
 	{
@@ -27,7 +28,7 @@ int uppr_hex(unsigned long int num)
 	}
 	index = counter - 1;
 
-	while (index)
+	while (index >= 0)
 	{
 		if (array[index] > 9)
 		{
@@ -38,5 +39,4 @@ int uppr_hex(unsigned long int num)
 	}
 	free(array);
 	return (counter);
-
 }
