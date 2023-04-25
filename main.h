@@ -1,6 +1,5 @@
 #ifndef MAIN_FILE_H
 #define MAIN_FILE_H
-#define BUFFER_SIZE 1024
 #include <stdarg.h>
 #include <stdlib.h>
 #include <stdio.h>
