@@ -8,6 +8,7 @@
 #include <unistd.h>
 #include <string.h>
 
+#define BUFFER_SIZE
 /**
  * _printf - a function that produces output according to a format.
  * @format: is a character string.
