@@ -8,8 +8,9 @@
 
 int _printf(const char *format, ...)
 {
-	int index, char_count = 0;
+	int index, char_count = 0, len;
 	va_list args;
+	char *str;
 
 	va_start(args, format);
 
@@ -50,15 +51,25 @@ int _printf(const char *format, ...)
 			}
 			else if (format[index] == 'o')
 			{
-				char_count += _output_oct(va_arg(args, int));
+				char_count += _output_oct(va_arg(args, unsigned int));
 			}
 			else if (format[index] == 'x')
 			{
-				chara_count += low_hex(va_arg(args, unsigned int));
+				char_count += low_hex(va_arg(args, unsigned int));
 			}
 			else if (format[index] == 'X')
 			{
 				char_count += uppr_hex(va_arg(args, unsigned int));
+			}
+			else if (format[index] == 'r')
+			{
+				str = va_arg(args, char *);
+				char_count += _output_rev(str);
+			}
+			else if (format[index] == 'R')
+			{
+				len = _strlen(args);
+				char_count += _output_rot13(va_arg(args, char *), len);
 			}
 			else if (format[index] == '%')
 			{

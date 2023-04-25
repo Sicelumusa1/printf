@@ -8,8 +8,8 @@
 
 int uppr_hex(unsigned long int num)
 {
-	long int index = 0, counter = 0;
-	long int *array;
+	unsigned long int index = 0, counter = 0;
+	unsigned long int *array;
 	unsigned long int temp = num;
 
 	while (num / 16 != 0)
@@ -17,7 +17,7 @@ int uppr_hex(unsigned long int num)
 		num /= 16;
 	}
 	counter++;
-	array = malloc(counter * sizeof(long int));
+	array = malloc(counter * sizeof(unsigned long int));
 
 	while (index < counter)
 	{
@@ -27,7 +27,7 @@ int uppr_hex(unsigned long int num)
 	}
 	index = counter - 1;
 
-	while (index >= 0)
+	while (index)
 	{
 		if (array[index] > 9)
 		{

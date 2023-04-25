@@ -46,7 +46,7 @@ char *mem_cpy(char *dest, char *src, unsigned int num)
 {
 	unsigned int index = 0;
 
-	for (index < num)
+	while (index < num)
 	{
 		dest[index] = src[index];
 		index++;
@@ -80,7 +80,7 @@ char *rev_string(char *str)
 	{
 		tmp = dest[len - 1];
 		dest[len - 1] = dest[head];
-		dest[head] tmp;
+		dest[head] = tmp;
 	}
 	return (dest);
 }
@@ -95,7 +95,7 @@ char *rev_string(char *str)
 int hex_check(int num, char x)
 {
 	char *hex = "abcdef";
-	char Hex = "ABCDEF";
+	char *Hex = "ABCDEF";
 
 	num = num - 10;
 	if (x == 'x')
@@ -108,4 +108,3 @@ int hex_check(int num, char x)
 	}
 	return (0);
 }
-

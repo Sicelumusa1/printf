@@ -22,7 +22,7 @@ int low_hex(unsigned int num)
 
 	len = oct_len(num, 16);
 	hex_rep = malloc(sizeof(char) * len + 1);
-	if (hex_len == NULL)
+	if (hex_rep == NULL)
 	{
 		return (-1);
 	}
@@ -33,7 +33,7 @@ int low_hex(unsigned int num)
 		rem_num = num % 16;
 		if (rem_num > 9)
 		{
-			rem_num = hex_check(ren_num, 'x');
+			rem_num = hex_check(rem_num, 'x');
 			hex_rep[len] = rem_num;
 		}
 		else

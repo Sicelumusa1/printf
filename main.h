@@ -19,12 +19,15 @@ int _putchar(char c);
 int _puts(char *str);
 int _output_unsigned_integer(unsigned int num);
 int _output_unsigned_assist(unsigned int num);
+int _output_rev(char *str);
+int _strlen(va_list args);
+int _output_rot13(char *str, int len);
 void _write(char *str);
 unsigned int oct_len(unsigned int num, int base);
 char *mem_cpy(char *dest, char *src, unsigned int num);
 char *rev_string(char *str);
 int hex_check(int num, char x);
-int _output_oct(int num);
+int _output_oct(unsigned int num);
 int uppr_hex(unsigned long int num);
 int low_hex(unsigned int num);
 

@@ -6,9 +6,9 @@
  * Return: symbols printed to stdout
  */
 
-int _output_oct(int num)
+int _output_oct(unsigned int num)
 {
-	int len;
+	unsigned int len;
 	char *octal_rep;
 	char * rev_str;
 
@@ -25,11 +25,11 @@ int _output_oct(int num)
 	octal_rep = malloc(sizeof(char) * len + 1);
 	if (octal_rep == NULL)
 	{
-		return (-1)
+		return (-1);
 	}
 	for (len = 0; num > 0; len++)
 	{
-		octal_rep[le] = (num % 8) + 48;
+		octal_rep[len] = (num % 8) + 48;
 		num = num / 8;
 	}
 	octal_rep[len] = '\0';
@@ -40,7 +40,7 @@ int _output_oct(int num)
 	}
 
 	_write(rev_str);
-	free(octa_rep);
+	free(octal_rep);
 	free(rev_str);
 	return (len);
 }
