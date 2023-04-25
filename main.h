@@ -7,6 +7,7 @@
 #include <unistd.h>
 #include <string.h>
 
+#define BUFFER_SIZE
 /**
  * _printf - a function that produces output according to a format.
  * @format: is a character string.
@@ -22,6 +23,7 @@ int _output_unsigned_assist(unsigned int num);
 int _output_rev(char *str);
 int _strlen(va_list args);
 int _output_rot13(char *str, int len);
+int _output_pointer(void *ptr);
 void _write(char *str);
 unsigned int oct_len(unsigned int num, int base);
 char *mem_cpy(char *dest, char *src, unsigned int num);
