@@ -19,4 +19,4 @@ int _puts(char *str)
 
 	/*return count of characters printed*/
 	return (counted_chars);
-}	
+}
