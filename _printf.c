@@ -4,13 +4,15 @@
  * _printf - a function that produces output according to a format.
  * Return: the number of characters printed
  * @format: is a character string.
- */ 
+ */
 
 int _printf(const char *format, ...)
 {
-	int index, char_count = 0, len;
+	int index, char_count = 0, len, j;
 	va_list args;
 	char *str;
+	int buffer_count = 0;
+	char buffer[BUFFER_SIZE];
 
 	va_start(args, format);
 
@@ -29,37 +31,55 @@ int _printf(const char *format, ...)
 			index++;
 			if (format[index] == 'c')
 			{
-				char_count += _putchar(va_arg(args, int));
+				buffer[buffer_count] = (char)va_arg(args, int);
+				buffer_count++;
 			}
 			else if (format[index] == 's')
 			{
-				char_count += _puts(va_arg(args, char *));
+				char *str = va_arg(args, char *);
+
+				for (j = 0; str[j] != '\0'; j++)
+				{
+					buffer[buffer_count] = str[j];
+					buffer_count++;
+				}
 			}
 			else if (format[index] == 'i' || format[index] == 'd')
 			{
-				char_count += _print_int(va_arg(args, int));
+				int n = va_arg(args, int);
+
+				buffer_count += _putint(n);
 
 			}
 			else if (format[index] == 'b')
 			{
-				print_binary(va_arg(args, unsigned int));
-				char_count += sizeof(unsigned int) * 8;
+				unsigned int n = va_arg(args, unsigned int);
+
+				buffer_count += _putuint(n, 2);
 			}
 			else if (format[index] == 'u')
 			{
-				char_count += _output_unsigned_integer(va_arg(args, unsigned int));
+				unsigned int n = va_arg(args, unsigned int);
+
+				buffer_count += _putuint(n, 10);
 			}
 			else if (format[index] == 'o')
 			{
-				char_count += _output_oct(va_arg(args, unsigned int));
+				unsigned int n = va_arg(args, unsigned int);
+
+				buffer_count += _putuint(n, 8);
 			}
 			else if (format[index] == 'x')
 			{
-				char_count += low_hex(va_arg(args, unsigned int));
+				unsigned int n = va_arg(args, unsigned int);
+
+				buffer_count += _putuint(n, 16);
 			}
 			else if (format[index] == 'X')
 			{
-				char_count += uppr_hex(va_arg(args, unsigned int));
+				unsigned int n = va_arg(args, unsigned int);
+
+				buffer_count = _putuint(n, -16);
 			}
 			else if (format[index] == 'p')
 			{
@@ -77,14 +97,24 @@ int _printf(const char *format, ...)
 			}
 			else if (format[index] == '%')
 			{
-				char_count += _putchar('%');
+				buffer[buffer_count] = '%';
+				buffer_count++;
 			}
 		}
 		else
 		{
-			char_count += _putchar(format[index]);
+			buffer[buffer_count] = format[index];
+			buffer_count++;
+		}
+		if (buffer_count >= BUFFER_SIZE - 1)
+		{
+			char_count += write(STDOUT_FILENO, buffer, buffer_count);
+				buffer_count = 0;
 		}
 	}
+	char_count += write(STDOUT_FILENO, buffer, buffer_count);
+
 	va_end(args);
+
 	return (char_count);
-}	
+}
