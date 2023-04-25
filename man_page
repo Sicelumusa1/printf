@@ -1,0 +1,20 @@
+.TH _printf(3)
+.SH NAME
+_printf - prints to the standard output according to format
+.SH SYNOPSIS
+#include "main.h"
+int _printf (const char *format, ...)
+.SH DESCRIPTION
+.B_printf
+This function works like the printf function in the stdlib. It uses the header file main.h, which contains all the function prototypes needed to build the function. The function prints characters to the standard output like the original printf, according to the format of the character.
+.SH HOW IT WORKS
+The function _printf takes in a format string followed by an optional variable number of arguments. The format string specifies how the subsequent arguments are formatted and printed. The function returns the number of characters printed.
+
+For example:
+.nf
+_printf("I am %d years old", 24);
+.fi
+This will output to stdout: "I am 24 years old".
+
+.SH AUTHORS
+This man page was created by @Sicelumusa1 and @jaybmok05.
