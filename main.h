@@ -1,5 +1,6 @@
 #ifndef MAIN_FILE_H
 #define MAIN_FILE_H
+#define BUFFER_SIZE 1024
 #include <stdarg.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -30,6 +31,8 @@ int hex_check(int num, char x);
 int _output_oct(unsigned int num);
 int uppr_hex(unsigned long int num);
 int low_hex(unsigned int num);
+int _putuint(unsigned int n, int base);
+int _putint(int n);
 
 void print_binary(unsigned int x);
 int print_binary_custom(const char *format, unsigned int x);
